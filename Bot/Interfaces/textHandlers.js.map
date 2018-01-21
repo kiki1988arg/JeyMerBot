@@ -1,0 +1,1 @@
+{"version":3,"file":"textHandlers.js","sourceRoot":"","sources":["../../Dev/Interfaces/textHandlers.ts"],"names":[],"mappings":";;AAAA;IAGI,IAAW,SAAS,CAAC,SAAsB;QACzC,IAAI,CAAC,UAAU,GAAG,SAAS,CAAC;IAC9B,CAAC;IAED,IAAW,SAAS;QAClB,MAAM,CAAC,IAAI,CAAC,UAAU,CAAC;IACzB,CAAC;IAEM,aAAa,CAAC,GAAW,IAAS,CAAC;IAAA,CAAC;CAC5C;AAZH,kCAYG"}
