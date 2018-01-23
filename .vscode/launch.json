@@ -21,7 +21,7 @@
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",            
-            "args": ["--no-timeouts","-r", "ts-node/register" , "${workspaceRoot}/Test/**/*.ts"],
+            "args": ["-r", "ts-node/register" , "${workspaceRoot}/Test/**/*.ts"],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector"
         }

@@ -13,13 +13,16 @@ const message_1 = require("./Models/message");
 class JeyMerBot {
     constructor() {
     }
+    ;
     getMessage() {
         return __awaiter(this, void 0, void 0, function* () {
             mongoose.connect('mongodb://localhost/JeyMerBot');
-            this.msgResponse = yield message_1.message.findOne({ 'request': 'asdasd' }, 'response').exec();
-            return this.msgResponse;
+            this.msgResponse = yield message_1.message.findOne({ 'request': 'ezequiel' }, 'response').exec();
+            if (this.msgResponse)
+                return yield this.msgResponse.response;
+            else
+                return "not found";
         });
     }
 }
 exports.default = JeyMerBot;
-//# sourceMappingURL=index.js.map

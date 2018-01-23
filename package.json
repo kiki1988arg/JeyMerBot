@@ -1,8 +1,9 @@
 {
-  "name": "JeyMerBot",
+  "name": "jeymerbot",
   "version": "1.0.0",
   "description": "",
-  "main": "./Bot/index.ts",
+  "main": "./Bot/index.js",  
+  "types": "./Bot/index.d.ts",
   "dependencies": {
     "mongoose": "^5.0.1",
     "typescript": "^2.6.2"

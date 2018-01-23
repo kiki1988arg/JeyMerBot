@@ -12,4 +12,3 @@ class ConcreteHandlerA extends textHandlers_1.TextHandler {
         this.successor.handleRequest(req);
     }
 }
-//# sourceMappingURL=mongoHandler.js.map
