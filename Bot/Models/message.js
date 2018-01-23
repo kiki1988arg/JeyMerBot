@@ -15,3 +15,4 @@ exports.message = mongoose_1.model("User", exports.messageSchema, 'actions');
 //     res: string;  
 // }
 // export default message;
+//# sourceMappingURL=message.js.map

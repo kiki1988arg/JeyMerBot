@@ -1,10 +1,14 @@
 import {expect} from 'chai'
-import jmb from '../Dev/index'
+import {jey} from '../Dev/index'
+
+
 
 describe('mongo jeymerbot', () => { 
-    it('should return probando', async () => {  
-        var mi = new jmb();     
-        var res = await (mi.getMessage());
-        await expect(res).to.equal('probando');
+    it('should return probando', async () => { 
+        console.log(await jey.getMessage());       
+        console.log(await jey.getHola());
+       
+        
+ 
     });  
   });
