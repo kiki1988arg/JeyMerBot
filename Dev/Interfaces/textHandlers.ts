@@ -1,4 +1,4 @@
-export class TextHandler {
+class TextHandler {
     private _successor: TextHandler;
   
     public set successor(successor: TextHandler) {
@@ -9,5 +9,6 @@ export class TextHandler {
       return this._successor;
     }
   
-    public handleRequest(msg: string): void {};
+    public async handleRequest(msg: string): Promise<any> {};
   }
+export default TextHandler;

@@ -3,6 +3,10 @@ import {jey} from '../Dev/index'
 
 
 
+
+
+console.log(process.env);
+
 describe('mongo jeymerbot', () => { 
     it('should return probando', async () => { 
         console.log(await jey.getMessage());       

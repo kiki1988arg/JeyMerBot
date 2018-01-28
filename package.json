@@ -5,7 +5,11 @@
   "main": "./Bot/index.js",
   "types": "./Bot/index.d.ts",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "mongoose": "^5.0.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "twitter-node-client": "0.0.6",
     "typescript": "^2.6.2"
   },
   "devDependencies": {
