@@ -1,8 +1,7 @@
 import TextHandler from "../Interfaces/textHandlers"
-import textHandlers from "../Interfaces/textHandlers"
 var rp = require('request-promise')
-
 var Twitter:any = require('twitter-node-client').Twitter;
+require('dotenv').config({path: 'twitter.env'})
 
 
 export class TwitterHandler extends TextHandler{  
@@ -16,26 +15,24 @@ export class TwitterHandler extends TextHandler{
         super();
         	//Example calls
             this.twitter = new Twitter({
-            "consumerKey": "V3306sFiIpNNQHz4tyFzzcVBJ",
-            "consumerSecret": "BX2uL4AjEk1qonljncVsB42RByVIFmq6vcprMc4ctawZnPXqOY",
-            "accessToken": "954484250140729344-c5ACzNKJ3RX6beWqXvn1qvrW6Gv5I2w",
-            "accessTokenSecret": "UktqHVNUCMRCEeMEIZAyAhyMI3in63ouBNZqq4jx6DRqE",
-            "callBackUrl": "XXX"
+            "consumerKey": process.env.CONSUMERKEY,
+            "consumerSecret": process.env.CONSUMERSECRET,
+            "accessToken": process.env.ACCESTOKEN,
+            "accessTokenSecret": process.env.ACCESTOKENSECRET,
+            "callBackUrl": process.env.CALLBACKURL
         });
         this.re = new RegExp("(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)");
-        
+      
     }
 
     public async handleRequest(message:string): Promise<any> {       
         if(message.startsWith('!twit:'))
-        {     
-            
+        {             
            this.twitter.postTweet({'status':message.split(':')[1]},this.error,this.succes);                         
-           return "tweet enviado";
-            
+           return "tweet enviado";         
            
         }
-        if(this.re.test(message))
+        else if(this.re.test(message))
         {
             const options = {
                 url: message,
@@ -52,6 +49,10 @@ export class TwitterHandler extends TextHandler{
             return "imagen subida";                     
            
         }
+        else {
+            return this.successor.handleRequest(message);
+        }
+   
 
        
     }
@@ -70,4 +71,3 @@ export class TwitterHandler extends TextHandler{
 
 } 
 
-export const TwitterHandlerModule = new TwitterHandler();

@@ -19,7 +19,7 @@
         {
             "name": "Run mocha",
             "type": "node",
-            "request": "launch",
+            "request": "launch",           
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",            
             "args": ["-r", "ts-node/register" , "${workspaceRoot}/Test/**/*.ts"],
             "cwd": "${workspaceRoot}",

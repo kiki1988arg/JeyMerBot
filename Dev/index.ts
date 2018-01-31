@@ -1,32 +1,25 @@
-import { TwitterHandlerModule } from './Handlers/twitterHandler'
-
+import { TwitterHandler } from './Handlers/twitterHandler';
+import { GiHandler } from './Handlers/giHandler';
 // import * as mongoose from 'mongoose';
 // import {message , ImessageModel} from "./Models/message";
 
  export class JeyMerBot {
-      public sendMessage(message:any)
+      private twitterHandler:any;
+      private giHandler:any;
+      constructor()
       {
-        TwitterHandlerModule.handleRequest(message);
+          this.twitterHandler = new TwitterHandler();  
+          this.giHandler = new GiHandler(); 
+          this.twitterHandler.successor = this.giHandler;         
       }
-      // private msgResponse: ImessageModel | null; // Puede devolver ImessageModel o null
-      // private connection:string;   
-    
-      // public async getMessage() {  
-      // mongoose.connect('mongodb://localhost/JeyMerBot');    
-      // this.msgResponse = await message.findOne({ 'request': 'ezequiel1' }, 'response').exec();
-      // if( this.msgResponse)
-      // return await this.msgResponse.response;
-      // else
-      // return "not found";
-      // }  
-
-      // public async getHola() {  
-      //   return await "Hola";
-      // }
+      public async sendMessage(message:any):Promise<any>
+      {
+         return this.twitterHandler.handleRequest(message);
+      }     
       
   }
 
-  export const jmb = new JeyMerBot();
+
 
 
 

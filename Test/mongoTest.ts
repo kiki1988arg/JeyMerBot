@@ -1,18 +1,11 @@
-import {expect} from 'chai'
-import {jey} from '../Dev/index'
+// import {expect} from 'chai'
 
-
-
-
-
-console.log(process.env);
-
-describe('mongo jeymerbot', () => { 
-    it('should return probando', async () => { 
-        console.log(await jey.getMessage());       
-        console.log(await jey.getHola());
+// describe('mongo jeymerbot', () => { 
+//     it('should return probando', async () => { 
+//         console.log(await jey.getMessage());       
+//         console.log(await jey.getHola());
        
         
  
-    });  
-  });
+//     });  
+//   });

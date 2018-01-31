@@ -37,6 +37,8 @@ node_modules/
 jspm_packages/
 data/
 img/
+Dev/
+.env
 
 
 # Typescript v1 declaration files
