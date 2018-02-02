@@ -26,9 +26,9 @@ export class TwitterHandler extends TextHandler{
     }
 
     public async handleRequest(message:string): Promise<any> {       
-        if(message.startsWith('!twit:'))
+        if(message.startsWith('.twit'))
         {             
-           this.twitter.postTweet({'status':message.split(':')[1]},this.error,this.succes);                         
+           this.twitter.postTweet({'status':message.slice(5)},this.error,this.succes);                         
            return "tweet enviado";         
            
         }

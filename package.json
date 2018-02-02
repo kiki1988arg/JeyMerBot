@@ -6,6 +6,7 @@
   "types": "./Bot/index.d.ts",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "flickrapi": "^0.6.0",
     "mongoose": "^5.0.2",
     "node-google-image-search": "^1.0.3",
     "request": "^2.83.0",
