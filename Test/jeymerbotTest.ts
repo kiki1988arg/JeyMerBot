@@ -31,7 +31,7 @@ describe('twitter deberia subir una imagen', () => {
   describe('link con una imágen', () => { 
     it('should return a link',async function() { 
     this.timeout(5000); 
-    let response = await  jmb.sendMessage(".pic jeymer"); 
+    let response = await  jmb.sendMessage(".pic maria__"); 
     expect(response).to.equal("https://farm1.staticflickr.com/507/19740064399_62ba6f45bf.jpg");        
       
     });  
