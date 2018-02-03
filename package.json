@@ -1,6 +1,6 @@
 {
   "name": "jeymerbot",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "./Bot/index.js",
   "types": "./Bot/index.d.ts",
