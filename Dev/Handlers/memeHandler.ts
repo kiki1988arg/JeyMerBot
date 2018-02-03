@@ -1,6 +1,5 @@
 import TextHandler from "../Interfaces/textHandlers"
 var Imgflipper = require("imgflipper");
-require('dotenv').config({path: 'meme.env'})
 
 export class MemeHandler extends TextHandler{ 
 
@@ -8,6 +7,8 @@ export class MemeHandler extends TextHandler{
         if(message.startsWith('.meme')){  
             return await this.getMeme(message.slice(6));            
         }  
+        else 
+            return this.successor.handleRequest(message);
         
     }   
    
@@ -23,7 +24,7 @@ export class MemeHandler extends TextHandler{
                 new Error(err);
             }
             let memeString = msg.split(',');
-            var imgflipper = new Imgflipper(process.env.MEMEUSERNAME,process.env.MEMEPASS);
+            var imgflipper = new Imgflipper(process.env.MEME_USERNAME,process.env.MEME_PASS);
             imgflipper.generateMeme(memeString[0], memeString[1], memeString[2], cb);
            
         });

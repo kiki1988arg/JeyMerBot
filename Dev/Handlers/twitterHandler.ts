@@ -1,7 +1,6 @@
 import TextHandler from "../Interfaces/textHandlers"
 var rp = require('request-promise')
 var Twitter:any = require('twitter-node-client').Twitter;
-require('dotenv').config({path: 'twitter.env'})
 
 
 export class TwitterHandler extends TextHandler{  
@@ -15,11 +14,11 @@ export class TwitterHandler extends TextHandler{
         super();
         	//Example calls
             this.twitter = new Twitter({
-            "consumerKey": process.env.CONSUMERKEY,
-            "consumerSecret": process.env.CONSUMERSECRET,
-            "accessToken": process.env.ACCESTOKEN,
-            "accessTokenSecret": process.env.ACCESTOKENSECRET,
-            "callBackUrl": process.env.CALLBACKURL
+            "consumerKey": process.env.TWITTER_CONSUMERKEY,
+            "consumerSecret": process.env.TWITTER_CONSUMERSECRET,
+            "accessToken": process.env.TWITTER_ACCESTOKEN,
+            "accessTokenSecret": process.env.TWITTER_ACCESTOKENSECRET,
+            "callBackUrl": process.env.TWITTER_CALLBACKURL
         });
         this.re = new RegExp("(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)");
       

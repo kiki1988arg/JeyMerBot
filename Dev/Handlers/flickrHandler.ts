@@ -1,5 +1,5 @@
 import TextHandler from "../Interfaces/textHandlers"
-require('dotenv').config({path: 'flickr.env'})
+require('dotenv').config()
 
 export class FlickrHandler extends TextHandler{ 
     
@@ -10,11 +10,11 @@ export class FlickrHandler extends TextHandler{
         super();
         this.Flickr = require("flickrapi"), 
         this.flickrOptions = {
-        api_key: process.env.API_KEY,  
-        secret: process.env.SECRET,         
-        user_id: process.env.USER_ID,
-        access_token:process.env.ACCESS_TOKEN,
-        access_token_secret: process.env.ACCESS_TOKEN_SECRET
+        api_key: process.env.FLICKR_API_KEY,  
+        secret: process.env.FLICKR_SECRET,         
+        user_id: process.env.FLICKR_USER_ID,
+        access_token:process.env.FLICKR_ACCESS_TOKEN,
+        access_token_secret: process.env.FLICKR_ACCESS_TOKEN_SECRET
         };    
     } 
     

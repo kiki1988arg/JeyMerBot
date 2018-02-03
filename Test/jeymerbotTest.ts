@@ -32,7 +32,7 @@ describe('twitter deberia subir una imagen', () => {
     it('should return a link',async function() { 
     this.timeout(5000); 
     let response = await  jmb.sendMessage(".pic maria__"); 
-    expect(response).to.equal("https://farm1.staticflickr.com/507/19740064399_62ba6f45bf.jpg");        
+    expect(response.substring(0,12)).to.equal("https://farm");        
       
     });  
   });
@@ -43,7 +43,16 @@ describe('twitter deberia subir una imagen', () => {
     it('should return a link',async function() { 
     this.timeout(5000); 
     let response = await  jmb.sendMessage(".meme 61546, Brace yourselves, the sprint planning session is coming"); 
-    expect(response).to.equal("http://i.imgflip.com/23vfko.jpg");        
+    expect(response.substring(0,20)).to.equal("http://i.imgflip.com");        
+      
+    });  
+  });
+
+  describe('link de la nasa', () => { 
+    it('should return a link',async function() { 
+    this.timeout(5000); 
+    let response = await  jmb.sendMessage(".nasa"); 
+    expect(response.substring(0,21)).to.equal("https://apod.nasa.gov");        
       
     });  
   });
