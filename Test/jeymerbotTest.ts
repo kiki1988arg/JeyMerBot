@@ -11,13 +11,13 @@ describe('twitter deberia twittear', () => {
   });  
 
 
-describe('twitter deberia subir una imagen', () => { 
-    it('should return thank you for tweeting <3',async function() {
-      this.timeout(5000);
-      let response = await jmb.sendMessage("https://am-a.akamaihd.net/image?f=https://news-a.akamaihd.net/public/images/pages/2017/march/god-fist/img/god-fist-lee-sin-skin.jpg");
-      expect(response).to.equal('imagen subida');        
-    });  
-  });
+// describe('twitter deberia subir una imagen', () => { 
+//     it('should return thank you for tweeting <3',async function() {
+//       this.timeout(5000);
+//       let response = await jmb.sendMessage("https://am-a.akamaihd.net/image?f=https://news-a.akamaihd.net/public/images/pages/2017/march/god-fist/img/god-fist-lee-sin-skin.jpg");
+//       expect(response).to.equal('imagen subida');        
+//     });  
+//   });
 
   // describe('twitter deberia devolver un json con un link', () => { 
   //   it('should return a link',async function() { 
@@ -53,6 +53,24 @@ describe('twitter deberia subir una imagen', () => {
     this.timeout(5000); 
     let response = await  jmb.sendMessage(".nasa"); 
     expect(response.substring(0,21)).to.equal("https://apod.nasa.gov");        
+      
+    });  
+  });
+
+  describe('link de un gif', () => { 
+    it('should link de un gif',async function() { 
+    this.timeout(5000); 
+    let response = await  jmb.sendMessage(".gif"); 
+    expect(response.substring(0,13)).to.equal("https://media");        
+      
+    });  
+  });
+
+  describe('Array de gifs', () => { 
+    it('should link de un gif',async function() { 
+    this.timeout(5000); 
+    let response = await  jmb.sendMessage(".gif top"); 
+    expect(response).to.be.an('array');   
       
     });  
   });

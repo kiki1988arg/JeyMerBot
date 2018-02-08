@@ -31,23 +31,23 @@ export class TwitterHandler extends TextHandler{
            return "tweet enviado";         
            
         }
-        else if(this.re.test(message))
-        {
-            const options = {
-                url: message,
-                encoding: 'Base64'
-              };
-            //Set imageBase64  
-            this.imgBase64 = await rp.get(options)
-                .then(function (res:string) {
-                  return res;
-                });  
-            //upload del image si es succes lo envio a la
-            // funcion mediaUpload para que lo twittee
-            this.twitter.postMedia({'media':this.imgBase64},this.error,this.mediaUpload);              
-            return "imagen subida";                     
+        // else if(this.re.test(message))
+        // {
+        //     const options = {
+        //         url: message,
+        //         encoding: 'Base64'
+        //       };
+        //     //Set imageBase64  
+        //     this.imgBase64 = await rp.get(options)
+        //         .then(function (res:string) {
+        //           return res;
+        //         });  
+        //     //upload del image si es succes lo envio a la
+        //     // funcion mediaUpload para que lo twittee
+        //     this.twitter.postMedia({'media':this.imgBase64},this.error,this.mediaUpload);              
+        //     return "imagen subida";                     
            
-        }
+        // }
         else {
             return this.successor.handleRequest(message);
         }

@@ -8,9 +8,10 @@ export class NasaHandler extends TextHandler{
                  
                         let randomDate = await this.formatDate(this.getRandomDate());                        
                         const response = await got('https://api.nasa.gov/planetary/apod?api_key='+process.env.NASA_KEY+'&date='+randomDate, { json: true });
-                        return await response.body.url;       
+                        return await response.body.url;      
 
-            }        
+            }  
+            else return this.successor.handleRequest(message);      
         }
           
     private  getRandomDate():Date {
